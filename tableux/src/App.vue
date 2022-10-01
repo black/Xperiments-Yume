@@ -23,7 +23,7 @@ import ColumnHeader from '@/components/ColumnHeader.vue'
 import Rows from '@/components/Rows.vue'
 import TableToolbar from '@/components/TableToolbar.vue' 
 import DetailPanel from '@/components/DetailPanel.vue'
-import DeleteModal from '@/components/DeleteModal.vue' 
+import DeleteModal from '@/components/DeleteModal.vue'
 
 export default {
   name: 'App',
@@ -37,6 +37,11 @@ export default {
     DeleteModal 
   }, 
   computed: {
+    currentPage: { 
+      get() {
+        return this.$store.state.currentPage
+      }
+    },
     rowItems: {
       set() {
         const data = require("@/assets/mock.json") 
@@ -59,7 +64,7 @@ export default {
         return this.$store.state.deletePopup
       }
     } 
-  },
+  }, 
   mounted() {
     this.rowItems = ''
   }

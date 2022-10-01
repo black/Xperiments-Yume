@@ -4,6 +4,8 @@ import {
 
 export default createStore({
   state: {
+    currentPage: 1,
+    pageSize:10,
     checkbox: 0,
     checkItems: 0,
     checkedAll: true,
@@ -35,7 +37,10 @@ export default createStore({
     },
     organization(state) {
       return state.organization
-    },    
+    },
+    uscurrentPageer(state) {
+      return state.currentPage
+    },
     rowItems(state) {
       return state.rowItems
     },
@@ -68,8 +73,10 @@ export default createStore({
     organization(state, payload) {
       state.organization = payload
     },
-    rowItems(state, payload) {
-      console.log(payload)
+    currentPage(state, payload) {
+      state.currentPage = payload
+    },
+    rowItems(state, payload) { 
       state.rowItems = payload
     },
     deletePopup(state, payload) {

@@ -12,7 +12,7 @@ export default {
     name: 'TopBar',
     components: {
         Organization,
-        UserMenu  
+        UserMenu
     } 
 }
 </script>
