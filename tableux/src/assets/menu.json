@@ -1,0 +1,22 @@
+[ 
+    {
+        "title": "user",
+        "icon": "person_outline"
+    },
+    {
+        "title": "organization",
+        "icon": "domain"
+    },
+    {
+        "title": "payment",
+        "icon": "payment"
+    },
+    {
+        "title": "contents",
+        "icon": "article"
+    },
+    {
+        "title": "settings",
+        "icon": "tune"
+    } 
+]

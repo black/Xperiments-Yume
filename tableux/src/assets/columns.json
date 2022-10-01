@@ -1,0 +1,105 @@
+[
+    {
+        "title": "img",
+        "icon": "portrait",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "name",
+        "icon": "person",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "designation",
+        "icon": "support_agent",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "gender",
+        "icon": "male",
+
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "color",
+        "icon": "face_2",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "status",
+        "icon": "visibility",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    }
+]
