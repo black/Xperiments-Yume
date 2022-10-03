@@ -1,22 +1,27 @@
 [ 
     {
         "title": "user",
-        "icon": "person_outline"
+        "icon": "person_outline",
+        "route":"usermangement"
     },
     {
         "title": "organization",
-        "icon": "domain"
+        "icon": "domain",
+        "route": "organization"
     },
     {
         "title": "payment",
-        "icon": "payment"
+        "icon": "payment",
+        "route": "payment"
     },
     {
         "title": "contents",
-        "icon": "article"
+        "icon": "article",
+        "route": "contents"
     },
     {
         "title": "settings",
-        "icon": "tune"
+        "icon": "tune",
+        "route": "settings"
     } 
 ]

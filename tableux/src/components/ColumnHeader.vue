@@ -39,7 +39,7 @@ export default {
 
         const changeCheckBoxState = ()=> {
             selectAll.value = !selectAll.value
-            store.state.rowItems.forEach((item:any) => item.selected = selectAll)
+            store.state.rowItems.forEach((item: any) => item.selected = selectAll.value)
         }
 
         const checkBox = computed(() => {

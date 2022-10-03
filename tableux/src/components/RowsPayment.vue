@@ -11,26 +11,30 @@
                 </span>
             </div>
         </td> 
-        <td  class="px-5 w-32"  :class="[selectedView]">
-            <div class="w-8 h-8">
-                <img :src="item.img" alt="" class="object-cover w-full h-full rounded-full">
+        <td class="px-5" :class="[selectedView]"> 
+            <span class="font-normal">{{item.id}}</span>
+        </td>
+        <td  class="px-5"  :class="[selectedView]">
+            <span class="font-normal">{{item.description}}</span>
+        </td>
+        <td  class="px-5"  :class="[selectedView]">
+            <span class="font-normal">{{item.due_amount}}</span>
+        </td>
+        <td  class="px-5"  :class="[selectedView]">
+            <span class="font-normal">{{item.due_date}}</span>
+            <span class="text-xs px-3 py-1 bg-red rounded-full block">{{item.overdue}} Days</span>
+        </td>
+        <td  class="px-5"  :class="[selectedView]">
+            <span class="font-normal">{{item.invoice_date}}</span>
+        </td>
+        <td class="px-5 relative" :class="[selectedView]"  @mouseover="showdownload=true" @mouseleave="showdownload=false">
+            <span>DOWNLOAD</span>
+            <div class="flex flex-col absolute top-full z-10 bg-white rounded-b shadow" :class="{'flex':showdownload,'hidden':!showdownload}">
+                <span class="font-normal px-5 py-2 hover:bg-gray-200" v-for="(rep,idx) in item.invoice" :key="idx" @click.stop="">{{rep}}</span>
             </div>
         </td>
-        <td  class="px-5"  :class="[selectedView]">
-            <span class="font-normal">{{item.name}}</span>
-        </td>
-        <td  class="px-5"  :class="[selectedView]">
-            <span class="font-normal">{{item.designation}}</span>
-        </td>
-        <td  class="px-5"  :class="[selectedView]">
-            <span class="font-normal">{{item.gender}}</span>
-        </td>
-        <td  class="px-5"  :class="[selectedView]">
-            <span class="font-normal">{{item.color}}</span>
-        </td>
-        <td  class="px-5 w-32"  :class="[selectedView]">
-            <div class="rounded-full h-4 w-4" :class="{'bg-green-600':item.status,'bg-red-600':!item.status}"> 
-            </div>
+        <td  class="px-5 py-3 w-32"  :class="[selectedView]">
+             <button class="px-5 py-2 w-full rounded uppercase" :class="{'bg-yellow-200':(item.action=='processing'), 'border':(item.action=='paid'),'bg-green-600':(item.action=='pay')}">{{item.action}}</button>
         </td>
         <RowOptions :row="item" /> 
     </tr> 
@@ -50,7 +54,8 @@ export default {
     components: { 
         RowOptions
     }, 
-    setup(props:any) {
+    setup(props: any) {
+        const showdownload = ref(false)
         const item = ref(props.row)
         const store = useStore()
         const selectedView = computed(() => {
@@ -74,7 +79,7 @@ export default {
         } 
 
         return {
-            item, selectedView, setCheck, setDetailPanel
+            item, selectedView, showdownload, setCheck, setDetailPanel
         }
     } 
 }

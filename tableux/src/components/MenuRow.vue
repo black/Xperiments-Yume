@@ -4,7 +4,7 @@
             {{menu.icon}}
         </span>
         <span v-show="expanded" class="capitalize">{{menu.title}}</span>
-        <div class="absolute left-full px-5 py-3 ml-5 rounded bg-yume-grey-3 hidden group-hover:block z-40 shadow-lg capitalize" :class="{'hidden':expanded,'block':!expanded }">
+        <div class="absolute left-full px-5 py-3 ml-5 rounded bg-green-700 text-green-100 hidden group-hover:block z-40 shadow-lg capitalize" :class="{'hidden':expanded,'block':!expanded }">
             <span>{{menu.title}}</span>
         </div>
     </div>

@@ -8,7 +8,7 @@
         </div>
         <ul class="flex flex-col h-full">
             <li v-for="(menu,idx) in getMenu" :key="idx" :class="{'mt-auto mb-3':(idx>3)}" v-on:click="selectedMenu=menu.title">
-                <MenuRow :menu="menu" :expanded="show" :selected="(selectedMenu==menu.title)?true:false"/>
+                <router-link :to="{ path: '/home/' + menu.route }"><MenuRow :menu="menu" :expanded="show" :selected="(selectedMenu==menu.title)?true:false" /> </router-link> 
             </li>
         </ul>
     </div>

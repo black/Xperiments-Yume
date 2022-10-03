@@ -1,0 +1,121 @@
+[{
+        "title": "id",
+        "icon": "portrait",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "description",
+        "icon": "short_text",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "due amount",
+        "icon": "attach_money",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "due date",
+        "icon": "event",
+
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "invoice date",
+        "icon": "event_available",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "invoice",
+        "icon": "receipt_long",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    },
+    {
+        "title": "action",
+        "icon": "published_with_changes",
+        "checklist": [{
+                "name": "something",
+                "state": false
+            },
+            {
+                "name": "nothing",
+                "state": false
+            },
+            {
+                "name": "everything",
+                "state": false
+            }
+        ]
+    }
+]

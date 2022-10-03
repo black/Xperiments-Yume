@@ -7,9 +7,9 @@
         </div>
         <div class="absolute bottom-0 top-full w-full z-10" :class="{'block':show,'hidden':!show}">
             <div class="flex flex-col bg-white w-full shadow-md rounded-b gap-1 py-2">
-                <span class="py-2 px-5 hover:bg-gray-200" >Profile</span>
-                <span class="py-2 px-5 hover:bg-gray-200">Settings</span>
-                <span class="py-2 px-5 hover:bg-gray-200">Logout</span> 
+                <router-link class="py-2 px-5 hover:bg-gray-200" to="/profile"><span>Profile</span></router-link > 
+                <router-link class="py-2 px-5 hover:bg-gray-200" to="/settings"><span>Settings</span></router-link >
+                <router-link class="py-2 px-5 hover:bg-gray-200" to="/login"><span>Logout</span></router-link> 
             </div>
         </div>
     </div>

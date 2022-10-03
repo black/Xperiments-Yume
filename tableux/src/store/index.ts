@@ -4,7 +4,7 @@ import {
 
 export default createStore({
   state: {
-    currentMenu:'',
+    currentMenu:'user',
     currentPage: 1,
     pageSize:10,
     checkbox: 0,
@@ -13,6 +13,7 @@ export default createStore({
     deletePopup: false,
     detailpanelState: false,
     rowItems: [],
+    paymentRowItems:[],
     detailpanelContent: {
       "img": "",
       "name": "",
@@ -29,7 +30,7 @@ export default createStore({
     },
     organization: {
       logo: "client-logo.svg",
-      name: "Organization"
+      name: "Organization Name"
     }
   },
   getters: {
@@ -44,6 +45,9 @@ export default createStore({
     },
     rowItems(state) {
       return state.rowItems
+    },
+    paymentRowItems(state) {
+      return state.paymentRowItems
     },
     deletePopup(state) {
       return state.deletePopup
@@ -79,6 +83,9 @@ export default createStore({
     },
     rowItems(state, payload) { 
       state.rowItems = payload
+    },
+    paymentRowItems(state, payload) {
+      state.paymentRowItems = payload
     },
     deletePopup(state, payload) {
       state.deletePopup = payload
