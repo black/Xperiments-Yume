@@ -1,6 +1,6 @@
 <template>
     <div class="flex items-center gap-5">
-        <span class="font-bold uppercase">{{getSelectedMenu}} MODULE</span> 
+        <span class="font-bold uppercase">{{selectedMenu}} MODULE</span> 
         <div class="flex gap-3 py-2 ml-auto align-middle">
             <Pagination :pages="10"/>
             <button class="add-btn"> <span class="material-icons">add</span>ADD PERSON</button>
@@ -24,9 +24,17 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import Dropdown from '@/components/DropdownRadioList.vue'
-import Pagination from '@/components/Pagination.vue'
+import Pagination from '@/components/Pagination.vue' 
+import Pages from '@/use/pagination'
+import {
+    useStore
+} from 'vuex'
+import {
+    ref,computed
+} from 'vue'
+import Menu from '@/use/menu'
 export default {
     name: 'TableToolBar',
     props: ['name'],
@@ -34,31 +42,39 @@ export default {
         Dropdown,
         Pagination  
     },
-    data() {
-      return{
-          viewoptions: false,
-          options: [
-              {
-                  "title": "default",
-                  "state":true  
-              },
-              {
-                  "title": "compact",
-                  "state": false
-              },
-              {
-                  "title": "comfortable",
-                  "state": false
-              }
-          ],
-          selectedView:'default'
-      }  
-    },
-    computed: { 
-        getSelectedMenu() {
-            return this.$store.state.menu
-        }        
-    }
+    setup(props: any) {
+        const viewoptions = ref(false)
+        const options = ref([
+            {
+                "title": "default",
+                "state": true
+            },
+            {
+                "title": "compact",
+                "state": false
+            },
+            {
+                "title": "comfortable",
+                "state": false
+            }
+        ])
+        const store = useStore() 
+        const { selectedMenu } = Menu() 
+        let { currentPage } = Pages()
+        const setCurrentPage = (pos:number) => {
+            currentPage.value += pos
+            if (currentPage.value < 1) {
+                currentPage.value = 1
+            }
+            if (currentPage.value > props.pages) {
+                currentPage.value = props.pages
+            } 
+        }
+
+        return {
+            options, viewoptions, selectedMenu, setCurrentPage
+        }
+    } 
 }
 </script>
 

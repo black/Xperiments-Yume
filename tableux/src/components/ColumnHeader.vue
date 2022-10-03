@@ -21,41 +21,43 @@
     </tr> 
 </template>
 
-<script>
-// import Dropdown from '@/components/DropdownList.vue'
+<script lang="ts">
+import {
+    computed, ref
+} from 'vue'
+import {
+    useStore
+} from 'vuex'
+
 export default {
     name: 'ColumnHeader',
     props: ['columns', 'index'],
-    components: {
-       // Dropdown
-    },
-    data() {
-        return {
-            show: false,
-            selectAll:false 
+    setup() {
+        const store = useStore()
+        const show = ref(false)
+        let selectAll = ref(false) 
+
+        const changeCheckBoxState = ()=> {
+            selectAll.value = !selectAll.value
+            store.state.rowItems.forEach((item:any) => item.selected = selectAll)
         }
-    },
-    computed: {  
-        checkBox: {
-            get() {
-                const data = this.$store.state.rowItems
-                const state = data.filter(item => item.selected)
-                if (state.length == data.length) {
-                    return "check_box"
-                } else if (state.length < data.length && state.length >0) {
-                    return "indeterminate_check_box"
-                } else {
-                    return "check_box_outline_blank"
-                } 
+
+        const checkBox = computed(() => {
+            const data = store.state.rowItems
+            const states = data.filter((item:any) => item.selected)
+            if (states.length == data.length) {
+                return "check_box"
+            } else if (states.length < data.length && states.length > 0) {
+                return "indeterminate_check_box"
+            } else {
+                return "check_box_outline_blank"
             }
-        } 
-    },
-    methods: { 
-        changeCheckBoxState() {
-            this.selectAll = !this.selectAll  
-            this.$store.state.rowItems.forEach(item => item.selected = this.selectAll) 
+        })
+
+        return {
+            show, selectAll, checkBox, changeCheckBoxState
         }
-    }
+    } 
 }
 </script>
 

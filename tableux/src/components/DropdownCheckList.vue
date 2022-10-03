@@ -13,18 +13,22 @@
     </ul> 
 </template>
 
-<script>
+<script lang="ts">
+import {
+    ref
+} from 'vue'
+
 export default {
     name: 'DorpdownList',
     props: ['list'],
-    data() {
-        return {
-            selectors:this.list   
-        }  
-    },
-    methods: {
-        getState(state) { 
+    setup(props:any) {
+        const selectors = ref(props.list)
+        const getState = (state:boolean) => {
             return state ? "check_box" : "check_box_outline_blank"
+        }
+
+        return {
+            selectors, getState
         }
     } 
 }

@@ -8,31 +8,27 @@
      </div> 
 </template>
 
-<script>
+<script lang="ts">
+import Pagination from '@/use/pagination'
 export default {
     name: 'MenuRow',
-    props: ['pages'],
-    computed: {
-        currentPage: {
-            set(value) { 
-                this.$store.commit('currentPage', value)
-            },
-            get() {
-                return this.$store.state.currentPage
+    props: ['pages'], 
+    setup(props:any) { 
+        let { currentPage } = Pagination() 
+        const setCurrentPage = (pos:number) => {
+            currentPage.value += pos
+            if (currentPage.value < 1) {
+                currentPage.value = 1
             }
+            if (currentPage.value > props.pages) {
+                currentPage.value = props.pages
+            }
+            console.log(currentPage)
         }
-    },
-    methods: {
-        setCurrentPage(pos) {
-            this.currentPage += pos
-            if (this.currentPage < 1 ) {
-                this.currentPage = 1
-            }
-            if (this.currentPage > this.pages) {
-                this.currentPage = this.pages
-            }
+        return {
+            currentPage, setCurrentPage
         }
-    }
+    } 
 }
 </script>
 

@@ -19,22 +19,19 @@
     </div>
 </template>
 
-<script>
-
+<script lang="ts"> 
+import DeleteState from '@/use/delete'
 export default {
     name: 'DetailPanel',
-    computed: {
-        deletePopup: {
-            set(value) {
-                this.$store.commit('deletePopup', value)
-            }
-        } 
-    },
-    methods: {
-        deleteItem() {
+    setup() {
+        const {deletePopup} = DeleteState()
+        const deleteItem = () => {
             console.log("item deleted");
         }
-    },
+        return {
+            deletePopup, deleteItem
+        }
+    }  
 }
 </script>
 

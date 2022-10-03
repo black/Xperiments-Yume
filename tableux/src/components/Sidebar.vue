@@ -14,31 +14,41 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import {
+    computed,ref
+} from 'vue'
+import {
+    useStore
+} from 'vuex'
 import MenuRow from '@/components/MenuRow.vue'
+import fakeMenu from '@/assets/menu.json'
 export default {
     name: 'SideBar', 
     components: {
         MenuRow
     },
-    data() {
-        return {
-            show: false, 
-       }
-    },
-    computed: {
-        getMenu() {
-            return require("@/assets/menu.json") 
-        },
-        selectedMenu: {
+    setup() {
+        const store = useStore()
+        const show = ref(false)
+
+        const selectedMenu = computed({
             get() {
-                return this.$store.state.menu 
+                return store.state.currentMenu
             },
             set(value) {
-                this.$store.commit('menu', value)
+                store.commit('currentMenu', value)
             }
-        } 
-    } 
+        }) 
+
+        const getMenu = computed(() => { 
+            return fakeMenu 
+        }) 
+
+        return {
+            show, selectedMenu,getMenu
+        }
+    }  
 }
 </script>
 

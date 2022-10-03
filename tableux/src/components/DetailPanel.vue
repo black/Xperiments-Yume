@@ -3,10 +3,10 @@
         <div class="flex bg-white w-1/3 mx-auto mb-4 flex-col px-6 py-4 rounded gap-2"> 
             <div class="flex justify-between items-center pb-5 border-b-2">
                 <div class="flex gap-4 flex-0">
-                    <img :src="detail.img" alt="detail.img" class="object-contain rounded-full h-14 bg-blue-100">
+                    <img :src="item.img" alt="item.img" class="object-contain rounded-full h-14 bg-blue-100">
                 </div>
                 <h1 class="text-xl font-bold">Detail Panel</h1>
-                <span class="material-icons text-base hover:bg-blue-100 rounded-full px-4 py-3 cursor-pointer"  v-on:click="panel=false">
+                <span class="material-icons text-base hover:bg-blue-100 rounded-full px-4 py-3 cursor-pointer"  v-on:click="panelState=false">
                     close
                 </span>
             </div>
@@ -14,52 +14,48 @@
                 <span class="material-icons text-base">
                     person
                 </span>
-                <span>{{detail.name}}</span>
+                <span>{{item.name}}</span>
             </div>
             <div class="flex gap-4">
                 <span class="material-icons text-base">
                     support_agent
                 </span>
-                <span>{{detail.designation}}</span>
+                <span>{{item.designation}}</span>
             </div>
             <div class="flex gap-4">
                 <span class="material-icons text-base">
                      male
                 </span>
-                <span>{{detail.gender}}</span>
+                <span>{{item.gender}}</span>
             </div>
             <div class="flex gap-4">
                 <span class="material-icons text-base">
                      face_2  
                 </span>
-                <span>{{detail.color}}</span>
+                <span>{{item.color}}</span>
             </div>
             <div class="flex gap-4">
                 <span class="material-icons text-base">
                 visibility
                 </span>
-                <span>{{detail.status}}</span>
+                <span>{{item.status}}</span>
             </div> 
         </div>
     </div>
 </template>
 
-<script>
- 
+<script lang="ts">
+
+import Details from '@/use/details'
 export default {
-    name: 'DetailPanel', 
-    computed: {
-        panel: {
-            set(value) {
-                this.$store.commit('detailpanelState', value)
-            }
-        },
-        detail: { 
-            get() {
-                return this.$store.state.detailpanelContent
-            }
+    name:'DetailPanel',
+    setup() {  
+        const { panelState, details } = Details()
+        const item = details 
+        return {
+            panelState, item
         }
-    } 
+    }
 }
 </script>
 

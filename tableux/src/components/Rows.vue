@@ -7,7 +7,7 @@
                 </span>
                 <span class="row-item col-span-1 row-span-1 material-icons group-hover:inline"
                     :class="{'inline':item.selected,'hidden':!item.selected}">
-                    {{setCheck(item)}}
+                    {{setCheck(item.selected)}}
                 </span>
             </div>
         </td> 
@@ -34,24 +34,25 @@
     </tr> 
 </template> 
 
-<script> 
+<script lang="ts"> 
 import RowOptions from '@/components/RowOptions.vue'
-
+import {
+    computed, ref
+} from 'vue'
+import {
+    useStore
+} from 'vuex'
 export default {
     name: 'RowItem',
     props: ['row', 'index'],
     components: { 
         RowOptions
     }, 
-    data() {
-        return {
-           item:this.row
-        }
-    },
-    computed: { 
-        selectedView() {
-            console.log(this.$store.state.viewType)
-            switch (this.$store.state.viewType) {
+    setup(props:any) {
+        const item = ref(props.row)
+        const store = useStore()
+        const selectedView = computed(() => {
+            switch (store.state.viewType) {
                 case 'comfortable':
                     return "py-6";
                 case 'compact':
@@ -59,16 +60,20 @@ export default {
                 default:
                     return "";
             }
+        })
+
+        const setCheck = (state:boolean) => {
+            return state ? "check_box" : "check_box_outline_blank"
         }
-    },
-    methods: { 
-        setCheck(item) {
-            return item.selected ? "check_box" : "check_box_outline_blank"
-        },
-        setDetailPanel() {
-            this.$store.commit('detailpanelState', true)
-            this.$store.commit('detailpanelContent', this.row)
+
+        const setDetailPanel = ()=> {
+            store.commit('detailpanelState', true)
+            store.commit('detailpanelContent', props.row)
         } 
+
+        return {
+            item, selectedView, setCheck, setDetailPanel
+        }
     } 
 }
 </script>

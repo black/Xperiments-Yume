@@ -5,7 +5,7 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import UserMenu from '@/components/UserMenu.vue'
 import Organization from '@/components/Organization.vue'
 export default {

@@ -10,13 +10,13 @@
           <Rows :row="item" :index="index" v-for="(item,index) in rowItems" :key="index" v-on:click="item.selected=!item.selected"/>
         </table> 
       </div>
-      <DetailPanel v-show="panel"/>
+      <DetailPanel v-show="panelState"/>
       <DeleteModal v-show="deletePopup"/>
     </div>
   </div> 
 </template>
 
-<script>
+<script lang="ts">
 import Sidebar from '@/components/Sidebar.vue'
 import Topbar from '@/components/Topbar.vue'
 import ColumnHeader from '@/components/ColumnHeader.vue'
@@ -24,6 +24,20 @@ import Rows from '@/components/Rows.vue'
 import TableToolbar from '@/components/TableToolbar.vue' 
 import DetailPanel from '@/components/DetailPanel.vue'
 import DeleteModal from '@/components/DeleteModal.vue'
+
+import fakeData from "@/assets/mock.json" 
+import cols from "@/assets/columns.json"
+
+import Pagination from '@/use/pagination'
+import DeleteState from '@/use/delete'
+import Details from '@/use/details'
+
+import {
+  computed, onMounted
+} from 'vue'
+import {
+  useStore
+} from 'vuex'
 
 export default {
   name: 'App',
@@ -36,38 +50,48 @@ export default {
     DetailPanel,
     DeleteModal 
   }, 
-  computed: {
-    currentPage: { 
-      get() {
-        return this.$store.state.currentPage
-      }
-    },
-    rowItems: {
-      set() {
-        const data = require("@/assets/mock.json") 
-        this.$store.commit('rowItems', data)
-      }, 
+  setup() {
+    const store = useStore()
+
+    /* Delete Popup State*/
+    const { deletePopup } = DeleteState()
+
+    /* Detail Panel State */
+    const { panelState } = Details()
+
+    /* Current Page */
+    let { currentPage } = Pagination() 
+
+    /* load fake data */
+    let rowItems = computed({
+      set() { 
+          store.commit('rowItems', fakeData)
+        },
+        get() {
+          return store.state.rowItems
+        }
+    }) 
+
+    /* load fake columns */
+    let getColumns = computed({
       get() { 
-        return this.$store.state.rowItems
+        return cols
+      },
+      set() {
+        console.log(fakeData)
       }
-    },
-    getColumns() {
-      return require("@/assets/columns.json")
-    }, 
-    panel: {
-      get() {
-        return this.$store.state.detailpanelState
-      }
-    },
-    deletePopup: {
-      get() {
-        return this.$store.state.deletePopup
-      }
-    } 
-  }, 
-  mounted() {
-    this.rowItems = ''
-  }
+    })
+
+    /* Activate Data on mount */
+    onMounted(() => {
+      rowItems.value = ""
+      getColumns.value
+    }) 
+  
+    return {
+      panelState, rowItems, currentPage, getColumns, deletePopup
+    }
+  } 
 }
 </script>
 

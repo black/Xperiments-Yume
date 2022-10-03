@@ -10,19 +10,30 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import {
+    computed
+} from 'vue'  
+import {
+    useStore
+} from 'vuex'
 export default {
     name: 'OrganizationView',
-    computed: {
-        organization: {
+    setup() {
+        const store = useStore()
+        const organization  = computed({
             get() {
-                return this.$store.state.organization
+                return store.state.organization
             },
             set(value) {
-                this.$store.commit('organization', value)
+               store.commit('organization', value)
             }
+        })
+
+        return {
+            organization
         }
-    }
+    } 
 }
 </script>
 

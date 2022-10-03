@@ -10,17 +10,28 @@
     </div>
 </template> 
 
-<script>
+<script lang="ts">
+
+import Details from '@/use/details'
+import {
+    useStore
+} from 'vuex'
 export default {
     name: 'RowItem',
-    props: ['row', 'index'], 
-    methods: { 
-        setDetailPanel() {
-            this.$store.commit('detailpanelState', true)
-            this.$store.commit('detailpanelContent', this.row)
-        },
-        deletePopup() { 
-            this.$store.commit('deletePopup', true)
+    props: ['row', 'index'],
+    setup(props: any) {
+        let store = useStore()
+        let { panelState, details } = Details()
+        function setDetailPanel() {
+            panelState.value = true;
+            details.value = props.row 
+        }
+        const deletePopup = () => {
+            store.commit('deletePopup', true)
+        }
+
+        return {
+            panelState, details, setDetailPanel, deletePopup
         }
     }
 }

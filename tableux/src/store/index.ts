@@ -4,6 +4,7 @@ import {
 
 export default createStore({
   state: {
+    currentMenu:'',
     currentPage: 1,
     pageSize:10,
     checkbox: 0,
@@ -22,7 +23,7 @@ export default createStore({
     },
     viewType:'default',
     user: {
-      name: "Username",
+      name: "User Name",
       pic: "user.svg",
       email: "user@gmail.com"
     },
@@ -53,8 +54,8 @@ export default createStore({
     detailpanelContent(state) {
       return state.detailpanelContent
     },
-    menu(state) {
-      return state.menu
+    currentMenu(state) {
+      return state.currentMenu
     },
     viewType(state) {
       return state.viewType
@@ -88,8 +89,8 @@ export default createStore({
     detailpanelContent(state, payload) {
       state.detailpanelContent = payload
     },
-    menu(state, payload) {
-      state.menu = payload
+    currentMenu(state, payload) {
+      state.currentMenu = payload
     },
     viewType(state,payload) {
       state.viewType = payload
