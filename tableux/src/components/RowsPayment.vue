@@ -11,18 +11,22 @@
                 </span>
             </div>
         </td> 
-        <td class="px-5" :class="[selectedView]"> 
-            <span class="font-normal">{{item.id}}</span>
+        <td class="px-5 items-stretch" :class="[selectedView]"> 
+            <div class="flex w-24 laptop:w-auto overflow-hidden">
+                <span class="font-normal group-hover:animate-marquee laptop:not:(:animate-marquee)">{{item.id}}</span>
+            </div>
         </td>
         <td  class="px-5"  :class="[selectedView]">
             <span class="font-normal">{{item.description}}</span>
         </td>
-        <td  class="px-5"  :class="[selectedView]">
-            <span class="font-normal">{{item.due_amount}}</span>
+        <td  class="px-5 text-center"  :class="[selectedView]">
+            <span class="font-normal ">{{item.due_amount}}</span>
         </td>
         <td  class="px-5"  :class="[selectedView]">
-            <span class="font-normal">{{item.due_date}}</span>
-            <span class="text-xs px-3 py-1 bg-red rounded-full block">{{item.overdue}} Days</span>
+            <div class="flex gap-2"> 
+                <span class="font-normal">{{item.due_date}}</span>
+                <span class="text-xs px-3 py-1 bg-red xblock rounded-full" :class="{'bg-yellow-100 text-yellow-700':(item.overdue>0 && item.overdue<90), 'bg-red-600 text-white':(item.overdue==0), 'bg-red-100 text-red-600':(item.overdue<0) }">{{overDue(item.overdue)}}</span>
+            </div>
         </td>
         <td  class="px-5"  :class="[selectedView]">
             <span class="font-normal">{{item.invoice_date}}</span>
@@ -35,12 +39,14 @@
         </td>
         <td  class="px-5 py-3 w-32"  :class="[selectedView]">
              <button class="px-5 py-2 w-full rounded uppercase" :class="{'bg-yellow-200':(item.action=='processing'), 'border':(item.action=='paid'),'bg-green-600':(item.action=='pay')}">{{item.action}}</button>
-        </td>
-        <RowOptions :row="item" /> 
+        </td> 
+        <div class="hidden">  
+            <RowOptions :row="item" /> 
+        </div>
     </tr> 
 </template> 
 
-<script lang="ts"> 
+<script lang="ts">  
 import RowOptions from '@/components/RowOptions.vue'
 import {
     computed, ref
@@ -50,7 +56,7 @@ import {
 } from 'vuex'
 export default {
     name: 'RowItem',
-    props: ['row', 'index'],
+    props: ['row', 'index'], 
     components: { 
         RowOptions
     }, 
@@ -78,8 +84,21 @@ export default {
             store.commit('detailpanelContent', props.row)
         } 
 
+        const overDue = (value: number) => { 
+            switch (true) {
+                case (value > 0 && value<90):
+                    return "Due in " + value
+                case (value == 0):
+                    return "Due Today" 
+                case (value < 0):
+                    return "Overdue " + Math.abs(value)
+                default:
+                    return ""        
+            }
+        }
+
         return {
-            item, selectedView, showdownload, setCheck, setDetailPanel
+            item, selectedView, showdownload, setCheck, setDetailPanel, overDue
         }
     } 
 }

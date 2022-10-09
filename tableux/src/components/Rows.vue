@@ -32,7 +32,9 @@
             <div class="rounded-full h-4 w-4" :class="{'bg-green-600':item.status,'bg-red-600':!item.status}"> 
             </div>
         </td>
-        <RowOptions :row="item" /> 
+        <div class="hidden group-hover:block"> 
+            <RowOptions :row="item" /> 
+        </div>
     </tr> 
 </template> 
 

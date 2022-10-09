@@ -1,5 +1,5 @@
 <template> 
-    <div class="absolute bg-black  right-0 top-0 bottom-0  items-center hidden group-hover:flex z-10">
+    <div class="absolute bg-black  right-0 top-0 bottom-0  items-center flex z-40">
         <!-- stopPropagation event from child to parent element click.stop -->
         <span class="material-icons text-base text-white p-4" v-on:click.stop="setDetailPanel()">
             visibility

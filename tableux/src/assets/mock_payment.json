@@ -6,7 +6,7 @@
     "invoice_date": "11/4/2021",
     "invoice": ["performa","tax invoice","receipt"],
     "action": "pay",
-    "overdue":10
+    "overdue":-10
 }, {
     "id": "e4dec758fc32db9d3b9ffd53b52d2885",
     "description": "Charlot",
@@ -15,7 +15,7 @@
     "invoice_date": "3/27/2022",
     "invoice": ["performa","tax invoice"],
     "action": "paid",
-    "overdue":90
+    "overdue":0
 }, {
     "id": "11eb23baf9b495541bdde8c8db3e8eac",
     "description": "Minda",
@@ -33,7 +33,7 @@
     "invoice_date": "5/17/2022",
     "invoice": ["performa","tax invoice","receipt"],
     "action": "processing",
-    "overdue":30
+    "overdue":92
 }, {
     "id": "3c6f4ab09f27d3ee3d45e6465cf3f295",
     "description": "Linc",
@@ -42,7 +42,7 @@
     "invoice_date": "3/22/2022",
     "invoice": ["performa","tax invoice"],
     "action": "processing",
-    "overdue":30
+    "overdue":-30
 }, {
     "id": "0276d35e1c47cfc19f31bd77a3aa5922",
     "description": "Mehetabel",
@@ -60,7 +60,7 @@
     "invoice_date": "6/24/2022",
     "invoice": ["performa","tax invoice","receipt"],
     "action": "processing",
-    "overdue":30
+    "overdue":0
 }, {
     "id": "3f4ee2144e69938bbfee88eb84db6858",
     "description": "Teddy",
@@ -69,7 +69,7 @@
     "invoice_date": "1/9/2022",
     "invoice": ["performa"],
     "action": "paid",
-    "overdue":90
+    "overdue":-90
 }, {
     "id": "d55d53b5e9a85cd66e9981d7c758c919",
     "description": "Curr",
@@ -78,7 +78,7 @@
     "invoice_date": "1/16/2022",
     "invoice": ["performa"],
     "action": "processing",
-    "overdue":30
+    "overdue":-30
 }, {
     "id": "3c3900a2dc0eb96e4ca4f9732928773b",
     "description": "Hashim",
