@@ -37,8 +37,9 @@
                 <span class="font-normal px-5 py-2 hover:bg-gray-200" v-for="(rep,idx) in item.invoice" :key="idx" @click.stop="">{{rep}}</span>
             </div>
         </td>
-        <td  class="px-5 py-3 w-32"  :class="[selectedView]">
-             <button class="px-5 py-2 w-full rounded uppercase" :class="{'bg-yellow-200':(item.action=='processing'), 'border':(item.action=='paid'),'bg-green-600':(item.action=='pay')}">{{item.action}}</button>
+        <td  class="px-5 py-3 w-32 group relative"  :class="[selectedView]" @mouseenter="hovered=true" @mouseleave="hovered=false">
+            <ToolTip message="Lorem ispsum dorem seium" v-if="hovered"/>
+            <button class="px-5 py-2 w-full rounded uppercase" :class="{'bg-yellow-200':(item.action=='processing'), 'border':(item.action=='paid'),'bg-green-600':(item.action=='pay')}">{{item.action}}</button>
         </td> 
         <div class="hidden">  
             <RowOptions :row="item" /> 
@@ -48,6 +49,7 @@
 
 <script lang="ts">  
 import RowOptions from '@/components/RowOptions.vue'
+import ToolTip from '@/components/Tooltip.vue'
 import {
     computed, ref
 } from 'vue'
@@ -58,9 +60,11 @@ export default {
     name: 'RowItem',
     props: ['row', 'index'], 
     components: { 
-        RowOptions
+        RowOptions,
+        ToolTip
     }, 
     setup(props: any) {
+        const hovered = ref(false)
         const showdownload = ref(false)
         const item = ref(props.row)
         const store = useStore()
@@ -82,8 +86,8 @@ export default {
         const setDetailPanel = ()=> {
             store.commit('detailpanelState', true)
             store.commit('detailpanelContent', props.row)
-        } 
-
+        }  
+         
         const overDue = (value: number) => { 
             switch (true) {
                 case (value > 0 && value<90):
@@ -98,7 +102,7 @@ export default {
         }
 
         return {
-            item, selectedView, showdownload, setCheck, setDetailPanel, overDue
+            item, selectedView, showdownload, setCheck, setDetailPanel, overDue, hovered
         }
     } 
 }

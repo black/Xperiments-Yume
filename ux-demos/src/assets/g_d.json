@@ -1,0 +1,411 @@
+[{
+    "id": 1,
+    "title": "CAD",
+    "select": false,
+    "level": 1,
+    "options": [{
+        "id": 1,
+        "title": 705,
+        "select": false,
+        "level": 2,
+        "options": [{
+            "id": 1,
+            "title": "A",
+            "select": false,
+            "level": "3",
+            "options": []
+        },
+        {
+            "id": 2,
+            "title": "B",
+            "select": false,
+            "level": "3",
+            "options": []
+        }, {
+            "id": 3,
+            "title": "C",
+            "select": false,
+            "level": "3",
+            "options": []
+        }
+    ]
+    }, {
+        "id": 2,
+        "title": 880,
+        "select": false,
+        "level": 2,
+        "options": [{
+            "id": 1,
+            "title": "A",
+            "select": false,
+            "level": "3",
+            "options": []
+        },
+        {
+            "id": 2,
+            "title": "B",
+            "select": false,
+            "level": "3",
+            "options": []
+        }, {
+            "id": 3,
+            "title": "C",
+            "select": false,
+            "level": "3",
+            "options": []
+        }
+    ]
+    }, {
+        "id": 3,
+        "title": 968,
+        "select": false,
+        "level": 2,
+        "options": [{}]
+    }, {
+        "id": 4,
+        "title": 594,
+        "select": false,
+        "level": 2,
+        "options": [{},
+            {},
+            {},
+            {}
+        ]
+    }, {
+        "id": 5,
+        "title": 883,
+        "select": false,
+        "level": 2,
+        "options": [{},
+            {},
+            {},
+            {}
+        ]
+    }]
+
+}, {
+    "id": 2,
+    "title": "USD",
+    "select": false,
+    "level": 1,
+    "options": [{
+        "id": 1,
+        "title": 314,
+        "select": false,
+        "level": 2,
+        "options": [{}]
+    }, {
+        "id": 2,
+        "title": 361,
+        "select": false,
+        "level": 2,
+        "options": [{},
+            {}
+        ]
+    }, {
+        "id": 3,
+        "title": 857,
+        "select": false,
+        "level": 2,
+        "options": [{}]
+    }]
+}, {
+    "id": 3,
+    "title": "XAF",
+    "select": false,
+    "level": 1,
+    "options": [
+
+    ]
+}, {
+    "id": 4,
+    "title": "TND",
+    "select": false,
+    "level": 1,
+    "options": [
+
+    ]
+}, {
+    "id": 5,
+    "title": "PLN",
+    "select": false,
+    "level": 1,
+    "options": [{
+        "id": 1,
+        "title": 945,
+        "select": false,
+        "level": 2,
+        "options": [{},
+            {}
+        ]
+    }, {
+        "id": 2,
+        "title": 871,
+        "select": false,
+        "level": 2,
+        "options": [{
+            "id": 1,
+            "title": "A",
+            "select": false,
+            "level": "3",
+            "options": []
+        },
+        {
+            "id": 2,
+            "title": "B",
+            "select": false,
+            "level": "3",
+            "options": []
+        }, {
+            "id": 3,
+            "title": "C",
+            "select": false,
+            "level": "3",
+            "options": []
+        }
+    ]
+    }, {
+        "id": 3,
+        "title": 997,
+        "select": false,
+        "level": 2,
+        "options": [{}]
+    }]
+}, {
+    "id": 6,
+    "title": "ZAR",
+    "select": false,
+    "level": 1,
+    "options": [{
+        "id": 1,
+        "title": 945,
+        "select": false,
+        "level": 2,
+        "options": [{},
+            {}
+        ]
+    }, {
+        "id": 2,
+        "title": 871,
+        "select": false,
+        "level": 2,
+        "options": [{
+            "id": 1,
+            "title": "A",
+            "select": false,
+            "level": "3",
+            "options": []
+        },
+        {
+            "id": 2,
+            "title": "B",
+            "select": false,
+            "level": "3",
+            "options": []
+        }, {
+            "id": 3,
+            "title": "C",
+            "select": false,
+            "level": "3",
+            "options": []
+        }
+    ]
+    }, {
+        "id": 3,
+        "title": 997,
+        "select": false,
+        "level": 2,
+        "options": [{}]
+    }]
+}, {
+    "id": 7,
+    "title": "CNY",
+    "select": false,
+    "level": 1,
+    "options": [{
+        "id": 1,
+        "title": 945,
+        "select": false,
+        "level": 2,
+        "options": [{},
+            {}
+        ]
+    }, {
+        "id": 2,
+        "title": 871,
+        "select": false,
+        "level": 2,
+        "options": [{
+            "id": 1,
+            "title": "A",
+            "select": false,
+            "level": "3",
+            "options": []
+        },
+        {
+            "id": 2,
+            "title": "B",
+            "select": false,
+            "level": "3",
+            "options": []
+        }, {
+            "id": 3,
+            "title": "C",
+            "select": false,
+            "level": "3",
+            "options": []
+        }
+    ]
+    }, {
+        "id": 3,
+        "title": 997,
+        "select": false,
+        "level": 2,
+        "options": [{}]
+    }]
+}, {
+    "id": 8,
+    "title": "IDR",
+    "select": false,
+    "level": 1,
+    "options": [{
+        "id": 1,
+        "title": 945,
+        "select": false,
+        "level": 2,
+        "options": [{},
+            {}
+        ]
+    }, {
+        "id": 2,
+        "title": 871,
+        "select": false,
+        "level": 2,
+        "options": [{
+            "id": 1,
+            "title": "A",
+            "select": false,
+            "level": "3",
+            "options": []
+        },
+        {
+            "id": 2,
+            "title": "B",
+            "select": false,
+            "level": "3",
+            "options": []
+        }, {
+            "id": 3,
+            "title": "C",
+            "select": false,
+            "level": "3",
+            "options": []
+        }
+    ]
+    }, {
+        "id": 3,
+        "title": 997,
+        "select": false,
+        "level": 2,
+        "options": [{}]
+    }]
+}, {
+    "id": 9,
+    "title": "IDR",
+    "select": false,
+    "level": 1,
+    "options": [{}]
+}, {
+    "id": 10,
+    "title": "CNY",
+    "select": false,
+    "level": 1,
+    "options": [
+
+    ]
+}, {
+    "id": 11,
+    "title": "CNY",
+    "select": false,
+    "level": 1,
+    "options": [{},
+        {},
+        {},
+        {},
+        {}
+    ]
+}, {
+    "id": 12,
+    "title": "HNL",
+    "select": false,
+    "level": 1,
+    "options": [{},
+        {},
+        {},
+        {},
+        {}
+    ]
+}, {
+    "id": 13,
+    "title": "ILS",
+    "select": false,
+    "level": 1,
+    "options": [{}]
+}, {
+    "id": 14,
+    "title": "CVE",
+    "select": false,
+    "level": 1,
+    "options": [
+
+    ]
+}, {
+    "id": 15,
+    "title": "KZT",
+    "select": false,
+    "level": 1,
+    "options": [{},
+        {},
+        {}
+    ]
+}, {
+    "id": 16,
+    "title": "CNY",
+    "select": false,
+    "level": 1,
+    "options": [
+
+    ]
+}, {
+    "id": 17,
+    "title": "XAF",
+    "select": false,
+    "level": 1,
+    "options": [{},
+        {},
+        {},
+        {},
+        {}
+    ]
+}, {
+    "id": 18,
+    "title": "MXN",
+    "select": false,
+    "level": 1,
+    "options": [{},
+        {},
+        {},
+        {}
+    ]
+}, {
+    "id": 19,
+    "title": "RUB",
+    "select": false,
+    "level": 1,
+    "options": [{}]
+}, {
+    "id": 20,
+    "title": "IDR",
+    "select": false,
+    "options": [{}]
+}]
