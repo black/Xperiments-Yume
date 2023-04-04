@@ -8,7 +8,9 @@
                 <span class="material-icons text-base my-auto" v-on:click="viewoptions=!viewoptions">
                     view_day
                 </span>
-                <Dropdown :list="options" v-show="viewoptions" />
+               <transition name="fade">
+                    <Dropdown :list="options" v-if="viewoptions" />
+               </transition>
             </div>
             <div class="icon-btn">
                 <span class="material-icons text-base my-auto">
@@ -88,11 +90,20 @@ export default {
     @apply bg-gray-700
 }
 .icon-btn {
-    @apply flex justify-center align-middle p-1 rounded-full w-10 cursor-pointer;
+    @apply flex justify-center align-middle p-1 rounded-full w-10 h-10 cursor-pointer;
 }
 
 .icon-btn:hover{
     @apply bg-yume-grey-2
 }
- 
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>

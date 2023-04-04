@@ -8,6 +8,7 @@ module.exports = {
           'grey-1': '#FAFAFA',
           'grey-2': '#E9E9E9',
           'grey-3': '#F2F2F2',
+          'green': '#F2F2F2',
           'backdrop': 'rgba(0,0,0,0.35)'
         }
       },

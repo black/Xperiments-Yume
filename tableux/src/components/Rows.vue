@@ -1,5 +1,5 @@
 <template> 
-    <tr class="group cursor-pointer bg-white hover:bg-gray-100 relative" :class="[{'bg-yume-grey-3 font-medium':item.selected}]" >
+    <tr class="group cursor-pointer bg-white hover:bg-gray-100 relative transition ease-in-out delay-150" :class="[{'bg-yume-grey-3 font-medium':item.selected}]" >
         <td class="w-16" :class="[selectedView]"> 
             <div class="grid grid-cols-1 grid-rows-1 place-items-center">
                 <span class="row-item col-span-1 row-span-1 group-hover:hidden" :class="{'hidden':item.selected,'inline':!item.selected}">
